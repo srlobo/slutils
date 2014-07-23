@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
 import pytest
 
-def test_sljson():
+def test_sljson_date():
     import datetime
     from slutils import sljson
 
     mytimestamp = datetime.datetime.utcnow()
+    mytimestamp_json = sljson.dumps([mytimestamp])
+    mytimestamp_return = sljson.loads(mytimestamp_json)
+    assert mytimestamp == mytimestamp_return[0]
+
+def test_sljson2():
+    assert True
+    return
     mydate = datetime.date.today()
     data = dict(
         foo=42,
