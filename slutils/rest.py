@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import cherrypy
 import sqlalchemy
-import ptjson as json
+import sljson as json
 import logs
 
 logger = logs.loggerForModule("slutils.rest")
