@@ -28,5 +28,10 @@ def test_sljson2():
     )
 
     jsonstring = sljson.dumps(data)
-    data2 = repr(sljson.loads(jsonstring))
+    data2 = sljson.loads(jsonstring)
+    k = data.keys()
+    k.sort()
+    k2 = data2.keys()
+    k2.sort()
+    assert k == k2
     assert data == data2
