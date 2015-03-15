@@ -4,7 +4,7 @@
 import cherrypy
 import base
 import threading
-from  import logs
+from slutils import logs
 
 __BASE_AUTH_URI__ = '/auth'
 SESSION_LOGIN_KEY = 'login'
@@ -16,7 +16,7 @@ UDATA_LOCK = threading.Lock()
 
 
 # Sacado de http://tools.cherrypy.org/wiki/AuthenticationAndAccessRestrictions
-logger = logs.loggerForModule("ptauth.cpauth")
+logger = logs.loggerForModule("slutils.auth.cpauth")
 
 
 def check_auth(*args, **kwargs):

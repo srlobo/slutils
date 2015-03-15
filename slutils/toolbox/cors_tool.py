@@ -14,7 +14,7 @@ configuración local.
 
 """
 
-import logs
+from slutils import logs
 import cherrypy
 
 logger = logs.loggerForModule("cors_tool")

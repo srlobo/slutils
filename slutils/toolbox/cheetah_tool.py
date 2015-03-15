@@ -9,7 +9,7 @@
             return {'username': username}
 """
 
-import logs
+from slutils import logs
 import cherrypy
 import os
 

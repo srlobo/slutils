@@ -47,7 +47,7 @@ import elixir
 import time
 import re
 
-import logs
+from slutils import logs
 logger = logs.loggerForModule("sqlalchemy_tool")
 
 import threading
