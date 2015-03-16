@@ -6,13 +6,15 @@ def test_sljson_date():
     from slutils import sljson
 
     mytimestamp = datetime.datetime.utcnow()
-    mytimestamp_json = sljson.dumps([mytimestamp])
+    mytimestamp_json = sljson.dumps({'ts': mytimestamp})
     mytimestamp_return = sljson.loads(mytimestamp_json)
-    assert str(mytimestamp) == mytimestamp_return[0]
+    assert mytimestamp == mytimestamp_return['ts']
 
 def test_sljson2():
-    assert True
-    return
+    import datetime
+    from slutils import sljson
+
+    mytimestamp = datetime.datetime.utcnow()
     mydate = datetime.date.today()
     data = dict(
         foo=42,
@@ -26,5 +28,10 @@ def test_sljson2():
     )
 
     jsonstring = sljson.dumps(data)
-    data2 = repr(sljson.loads(jsonstring))
+    data2 = sljson.loads(jsonstring)
+    k = data.keys()
+    k.sort()
+    k2 = data2.keys()
+    k2.sort()
+    assert k == k2
     assert data == data2

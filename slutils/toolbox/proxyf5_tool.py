@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # $Id$
 
-import logs
+from slutils import logs
 import cherrypy
 
 logger = logs.loggerForModule("proxyf5_tool")

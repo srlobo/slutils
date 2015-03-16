@@ -58,22 +58,3 @@ def dumps(obj):
 
 def loads(obj):
     return json.loads(obj, object_hook=datetime_decoder)
-
-if __name__ == '__main__':
-    mytimestamp = datetime.datetime.utcnow()
-    mydate = datetime.date.today()
-    data = dict(
-        foo=42,
-        bar=[mytimestamp, mydate],
-        date=mydate,
-        timestamp=mytimestamp,
-        struct=dict(
-            date2=mydate,
-            timestamp2=mytimestamp
-        )
-    )
-
-    print repr(data)
-    jsonstring = dumps(data)
-    print jsonstring
-    print repr(loads(jsonstring))

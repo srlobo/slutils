@@ -5,6 +5,6 @@ import sqlalchemy_tool
 import status_tool
 import proxyf5_tool
 import cors_tool
-import logs
+from slutils import logs
 
 logs.disableLogging("slutils.tools")
