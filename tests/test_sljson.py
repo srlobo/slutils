@@ -8,7 +8,7 @@ def test_sljson_date():
     mytimestamp = datetime.datetime.utcnow()
     mytimestamp_json = sljson.dumps([mytimestamp])
     mytimestamp_return = sljson.loads(mytimestamp_json)
-    assert mytimestamp == mytimestamp_return[0]
+    assert str(mytimestamp) == mytimestamp_return[0]
 
 def test_sljson2():
     assert True
